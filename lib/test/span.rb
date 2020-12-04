@@ -69,11 +69,20 @@ module Test
     end
 
     def log(event: nil, timestamp: Time.now, **fields)
+      warn 'Span#log is deprecated.  Please use Span#log_kv instead.'
+
       Type! event, String, NilClass
       Type! timestamp, Time
       ensure_in_progress!
 
       @logs << LogEntry.new(event, timestamp, fields)
+    end
+
+    def log_kv(timestamp: Time.now, **fields)
+      Type! timestamp, Time
+      ensure_in_progress!
+
+      @logs << LogEntry.new(nil, timestamp, fields)
     end
 
     def finish(end_time: Time.now)
