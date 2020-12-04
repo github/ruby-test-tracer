@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "test-tracer"
-  spec.version       = "1.2.1"
+  spec.version       = "1.3.0-github"
   spec.authors       = ["iaintshine"]
   spec.email         = ["bodziomista@gmail.com"]
 
   spec.summary       = %q{OpenTracing compatible Tracer implementation to be used in tests in Ruby}
   spec.description   = %q{}
-  spec.homepage      = "https://github.com/iaintshine/ruby-test-tracer"
+  spec.homepage      = "https://github.com/github/ruby-test-tracer"
   spec.license       = "Apache-2.0"
 
   spec.required_ruby_version = ">= 2.2.0"
